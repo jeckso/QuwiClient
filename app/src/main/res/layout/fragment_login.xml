@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_4B7EB6"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/q"
+            android:fontFamily="@font/google_sans_bold"
+            android:textColor="@color/blue_082D57"
+            android:textSize="80sp" />
+
+        <EditText
+            android:id="@+id/etLoginEmail"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_rounded_blue_light"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHint="@color/blue_4B7EB6"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvEmailError"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="6dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/yellow_FFFF00_a200"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/etLoginPassword"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_rounded_blue_light"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/blue_4B7EB6"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvPasswordError"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="6dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/yellow_FFFF00_a200"
+            android:textSize="12sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btnLogin"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="260dp"
+                android:layout_height="52dp"
+                android:backgroundTint="@color/blue_2A609C_f"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:fontFamily="@font/arial_bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:rippleColor="@color/colorRippleBlueDark" />
+
+        </FrameLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</ScrollView>

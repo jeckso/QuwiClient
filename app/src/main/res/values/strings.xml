@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quwi Client</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="q">Q</string>
+</resources>
