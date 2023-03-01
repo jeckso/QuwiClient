@@ -2,6 +2,7 @@ package com.example.quwiclient.data.remote;
 
 import com.example.quwiclient.data.model.api.LoginRequest;
 import com.example.quwiclient.data.model.api.LoginResponse;
+import com.example.quwiclient.data.model.api.channel.ChannelResponse;
 import com.rx2androidnetworking.Rx2AndroidNetworking;
 
 import javax.inject.Inject;
@@ -59,14 +60,14 @@ public class AppApiHelper implements ApiHelper {
         return mApiHeader;
     }
 
-//    @Override
-//    public Single<BlogResponse> getBlogApiCall() {
-//        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_BLOG)
-//                .addHeaders(mApiHeader.getProtectedApiHeader())
-//                .build()
-//                .getObjectSingle(BlogResponse.class);
-//    }
-//
+    @Override
+    public Single<ChannelResponse> getChannelsApiCall() {
+        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_CHANNELS)
+                .addHeaders(mApiHeader.getProtectedApiHeader())
+                .build()
+                .getObjectSingle(ChannelResponse.class);
+    }
+
 //    @Override
 //    public Single<OpenSourceResponse> getOpenSourceApiCall() {
 //        return Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_OPEN_SOURCE)
