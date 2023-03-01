@@ -1,7 +1,13 @@
 package com.example.quwiclient.data.remote;
 
+import com.example.quwiclient.data.model.api.LoginRequest;
+import com.example.quwiclient.data.model.api.LoginResponse;
+import com.rx2androidnetworking.Rx2AndroidNetworking;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import io.reactivex.Single;
 
 @Singleton
 public class AppApiHelper implements ApiHelper {
@@ -39,14 +45,14 @@ public class AppApiHelper implements ApiHelper {
 //                .getObjectSingle(LogoutResponse.class);
 //    }
 //
-//    @Override
-//    public Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request) {
-//        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_SERVER_LOGIN)
-//                .addHeaders(mApiHeader.getPublicApiHeader())
-//                .addBodyParameter(request)
-//                .build()
-//                .getObjectSingle(LoginResponse.class);
-//    }
+    @Override
+    public Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request) {
+        return Rx2AndroidNetworking.post(ApiEndPoint.ENDPOINT_SERVER_LOGIN)
+                .addHeaders(mApiHeader.getPublicApiHeader())
+                .addBodyParameter(request)
+                .build()
+                .getObjectSingle(LoginResponse.class);
+    }
 
     @Override
     public ApiHeader getApiHeader() {

@@ -3,12 +3,16 @@ package com.example.quwiclient.data;
 import android.content.Context;
 
 import com.example.quwiclient.data.local.prefs.PreferencesHelper;
+import com.example.quwiclient.data.model.api.LoginRequest;
+import com.example.quwiclient.data.model.api.LoginResponse;
 import com.example.quwiclient.data.remote.ApiHeader;
 import com.example.quwiclient.data.remote.ApiHelper;
 import com.google.gson.Gson;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+
+import io.reactivex.Single;
 
 @Singleton
 public class AppDataManager implements DataManager {
@@ -72,6 +76,11 @@ public class AppDataManager implements DataManager {
 //    public Observable<List<User>> getAllUsers() {
 //        return mDbHelper.getAllUsers();
 //    }
+
+    @Override
+    public Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request) {
+        return mApiHelper.doServerLoginApiCall(request);
+    }
 
     @Override
     public ApiHeader getApiHeader() {

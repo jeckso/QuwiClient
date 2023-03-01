@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.quwiclient.R;
 import com.example.quwiclient.databinding.ActivityLoginBinding;
 import com.example.quwiclient.databinding.ActivitySplashBinding;
 import com.example.quwiclient.di.component.ActivityComponent;
@@ -26,14 +28,14 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public void login() {
-//        String email = mActivityLoginBinding.etEmail.getText().toString();
-//        String password = mActivityLoginBinding.etPassword.getText().toString();
-//        if (mViewModel.isEmailAndPasswordValid(email, password)) {
-//            hideKeyboard();
-//            mViewModel.login(email, password);
-//        } else {
-//            Toast.makeText(this, getString(R.string.invalid_email_password), Toast.LENGTH_SHORT).show();
-//        }
+        String email = binding.etLoginEmail.getText().toString();
+        String password = binding.etLoginPassword.getText().toString();
+        if (mViewModel.isEmailAndPasswordValid(email, password)) {
+            hideKeyboard();
+            mViewModel.login(email, password);
+        } else {
+            Toast.makeText(this, getString(R.string.invalid_email_password), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -50,6 +52,12 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
         View view = binding.getRoot();
         setContentView(view);
         mViewModel.setNavigator(this);
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewModel.onServerLoginClick();
+            }
+        });
     }
 
     @Override
