@@ -1,7 +1,5 @@
 package com.example.quwiclient.ui.base;
 
-import static androidx.core.app.ActivityCompat.requestPermissions;
-
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -10,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
@@ -22,7 +19,6 @@ import com.example.quwiclient.di.module.ActivityModule;
 
 import javax.inject.Inject;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class BaseActivity<T extends ViewBinding, V extends BaseViewModel> extends AppCompatActivity
         implements BaseFragment.Callback {
@@ -45,11 +41,6 @@ public abstract class BaseActivity<T extends ViewBinding, V extends BaseViewMode
     @Override
     public void onFragmentDetached(String tag) {
 
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

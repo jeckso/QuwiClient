@@ -12,7 +12,7 @@ import com.example.quwiclient.ui.base.BaseActivity;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewModel> implements LoginNavigator {
 
-    private ActivitySplashBinding binding;
+    private ActivityLoginBinding binding;
 
     public static Intent newIntent(Context context) {
         return new Intent(context, LoginActivity.class);
@@ -46,7 +46,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySplashBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
         mViewModel.setNavigator(this);

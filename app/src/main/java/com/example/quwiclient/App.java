@@ -9,14 +9,10 @@ import com.example.quwiclient.utils.AppLogger;
 
 import javax.inject.Inject;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class App extends Application {
 
     public AppComponent appComponent;
-
-    @Inject
-    CalligraphyConfig mCalligraphyConfig;
 
     @Override
     public void onCreate() {
@@ -35,6 +31,5 @@ public class App extends Application {
             AndroidNetworking.enableLogging(HttpLoggingInterceptor.Level.BODY);
         }
 
-        CalligraphyConfig.initDefault(mCalligraphyConfig);
     }
 }

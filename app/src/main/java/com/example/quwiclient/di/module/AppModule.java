@@ -22,7 +22,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 @Module
 public class AppModule {
@@ -39,15 +38,6 @@ public class AppModule {
         return "BuildConfig.API_KEY";
     }
 
-
-
-    @Provides
-    @Singleton
-    CalligraphyConfig provideCalligraphyDefaultConfig() {
-        return new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/source-sans-pro/SourceSansPro-Regular.ttf")
-                .build();
-    }
 
     @Provides
     @Singleton

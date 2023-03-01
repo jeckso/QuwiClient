@@ -10,20 +10,8 @@ public class SplashViewModel extends BaseViewModel<SplashNavigator> {
         super(dataManager, schedulerProvider);
     }
 
-//    public void startSeeding() {
-//        getCompositeDisposable().add(getDataManager()
-//                .seedDatabaseQuestions()
-//                .flatMap(aBoolean -> getDataManager().seedDatabaseOptions())
-//                .subscribeOn(getSchedulerProvider().io())
-//                .observeOn(getSchedulerProvider().ui())
-//                .subscribe(aBoolean -> {
-//                    decideNextActivity();
-//                }, throwable -> {
-//                    decideNextActivity();
-//                }));
-//    }
 
-    private void decideNextActivity() {
+    public void decideNextActivity() {
         if (getDataManager().getCurrentUserLoggedInMode() == DataManager.LoggedInMode.LOGGED_IN_MODE_LOGGED_OUT.getType()) {
             getNavigator().openLoginActivity();
         } else {
