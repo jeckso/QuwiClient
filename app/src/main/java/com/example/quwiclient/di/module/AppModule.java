@@ -13,6 +13,8 @@ import com.example.quwiclient.data.remote.AppApiHelper;
 import com.example.quwiclient.di.ApiInfo;
 import com.example.quwiclient.di.PreferenceInfo;
 import com.example.quwiclient.utils.AppConstants;
+import com.example.quwiclient.utils.rx.AppSchedulerProvider;
+import com.example.quwiclient.utils.rx.SchedulerProvider;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -36,6 +38,7 @@ public class AppModule {
     String provideApiKey() {
         return "BuildConfig.API_KEY";
     }
+
 
 
     @Provides
@@ -86,6 +89,11 @@ public class AppModule {
                 apiKey,
                 preferencesHelper.getCurrentUserId(),
                 preferencesHelper.getAccessToken());
+    }
+
+    @Provides
+    SchedulerProvider provideSchedulerProvider() {
+        return new AppSchedulerProvider();
     }
 
 }

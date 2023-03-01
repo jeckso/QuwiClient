@@ -36,20 +36,6 @@ public abstract class BaseActivity<T extends ViewBinding, V extends BaseViewMode
     @Inject
     protected V mViewModel;
 
-    /**
-     * Override for set binding variable
-     *
-     * @return variable id
-     */
-    public abstract int getBindingVariable();
-
-    /**
-     * @return layout resource id
-     */
-    public abstract
-    @LayoutRes
-    int getLayoutId();
-
 
     @Override
     public void onFragmentAttached() {
