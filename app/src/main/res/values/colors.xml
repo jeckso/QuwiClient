@@ -13,4 +13,11 @@
     <color name="yellow_FFFF00_a200">#ffff00</color>
     <color name="blue_4B7EB6">#4b7eb6</color>
     <color name="blue_082D57">#082d57</color>
+    <color name="grey_222222_t">#222222</color>
+    <color name="grey_8B8D8F_t">#8b8d8f</color>
+    <color name="grey_D9D9D9_t">#d9d9d9</color>
+    <color name="colorPrimary">#2d5da3</color>
+    <color name="colorAccent">#2975dc</color>
+    <color name="blue_2975DC_f">#2975dc</color>
+    <color name="blue_2567C0_f">#2567c0</color>
 </resources>

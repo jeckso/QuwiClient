@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="offset_20">20dp</dimen>
+    <dimen name="offset_25">25dp</dimen>
+    <dimen name="offset_8">8dp</dimen>
+    <dimen name="offset_30">30dp</dimen>
+</resources>
