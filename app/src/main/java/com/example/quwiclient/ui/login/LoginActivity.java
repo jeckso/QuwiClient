@@ -11,6 +11,7 @@ import com.example.quwiclient.databinding.ActivityLoginBinding;
 import com.example.quwiclient.databinding.ActivitySplashBinding;
 import com.example.quwiclient.di.component.ActivityComponent;
 import com.example.quwiclient.ui.base.BaseActivity;
+import com.example.quwiclient.ui.main.MainActivity;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewModel> implements LoginNavigator {
 
@@ -40,7 +41,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public void openMainActivity() {
-        Intent intent = LoginActivity.newIntent(LoginActivity.this);
+        Intent intent = MainActivity.newIntent(LoginActivity.this);
         startActivity(intent);
         finish();
     }

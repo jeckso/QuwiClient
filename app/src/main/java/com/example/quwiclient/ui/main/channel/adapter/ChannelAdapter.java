@@ -34,7 +34,6 @@ public class ChannelAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
 
-
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
         holder.onBind(position);
@@ -69,6 +68,8 @@ public class ChannelAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         @Override
         public void onBind(int position) {
             final Channel blog = mBlogResponseList.get(position);
+
+            mBinding.tvChannelName.setText(blog.getId().toString());
 
         }
 

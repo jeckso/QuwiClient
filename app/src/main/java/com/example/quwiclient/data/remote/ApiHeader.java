@@ -31,21 +31,13 @@ public class ApiHeader {
     public static final class ProtectedApiHeader {
 
         @Expose
-        @SerializedName("access_token")
+        @SerializedName("Authorization")
         private String mAccessToken;
 
-        @Expose
-        @SerializedName("api_key")
-        private String mApiKey;
-
-        @Expose
-        @SerializedName("user_id")
-        private Long mUserId;
 
         public ProtectedApiHeader(String mApiKey, Long mUserId, String mAccessToken) {
-            this.mApiKey = mApiKey;
-            this.mUserId = mUserId;
-            this.mAccessToken = mAccessToken;
+
+            this.mAccessToken = ("Bearer ".concat(mAccessToken));
         }
 
         public String getAccessToken() {
@@ -53,24 +45,10 @@ public class ApiHeader {
         }
 
         public void setAccessToken(String accessToken) {
-            mAccessToken = accessToken;
+            mAccessToken = ("Bearer ".concat(accessToken));
         }
 
-        public String getApiKey() {
-            return mApiKey;
-        }
 
-        public void setApiKey(String apiKey) {
-            mApiKey = apiKey;
-        }
-
-        public Long getUserId() {
-            return mUserId;
-        }
-
-        public void setUserId(Long mUserId) {
-            this.mUserId = mUserId;
-        }
     }
 
     public static final class PublicApiHeader {

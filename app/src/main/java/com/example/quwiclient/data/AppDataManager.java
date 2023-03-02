@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.quwiclient.data.local.prefs.PreferencesHelper;
 import com.example.quwiclient.data.model.api.LoginRequest;
 import com.example.quwiclient.data.model.api.LoginResponse;
+import com.example.quwiclient.data.model.api.channel.ChannelResponse;
 import com.example.quwiclient.data.remote.ApiHeader;
 import com.example.quwiclient.data.remote.ApiHelper;
 import com.google.gson.Gson;
@@ -85,6 +86,11 @@ public class AppDataManager implements DataManager {
     @Override
     public ApiHeader getApiHeader() {
         return mApiHelper.getApiHeader();
+    }
+
+    @Override
+    public Single<ChannelResponse> getChannelsApiCall() {
+        return mApiHelper.getChannelsApiCall();
     }
 
 //    @Override
@@ -240,7 +246,6 @@ public class AppDataManager implements DataManager {
 
     @Override
     public void updateApiHeader(Long userId, String accessToken) {
-        mApiHelper.getApiHeader().getProtectedApiHeader().setUserId(userId);
         mApiHelper.getApiHeader().getProtectedApiHeader().setAccessToken(accessToken);
     }
 

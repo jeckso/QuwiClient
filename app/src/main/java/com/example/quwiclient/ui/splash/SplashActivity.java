@@ -7,8 +7,8 @@ import android.view.View;
 import com.example.quwiclient.databinding.ActivitySplashBinding;
 import com.example.quwiclient.di.component.ActivityComponent;
 import com.example.quwiclient.ui.base.BaseActivity;
-import com.example.quwiclient.ui.splash.SplashNavigator;
 import com.example.quwiclient.ui.login.LoginActivity;
+import com.example.quwiclient.ui.main.MainActivity;
 
 public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashViewModel> implements SplashNavigator {
 
@@ -24,7 +24,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
 
     @Override
     public void openMainActivity() {
-        Intent intent = LoginActivity.newIntent(SplashActivity.this);
+        Intent intent = MainActivity.newIntent(SplashActivity.this);
         startActivity(intent);
         finish();
     }
@@ -34,10 +34,11 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
         super.onCreate(savedInstanceState);
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        setContentView(view);
+        setContentView(view);;
         mViewModel.setNavigator(this);
         mViewModel.decideNextActivity();
     }
+
 
     @Override
     public void performDependencyInjection(ActivityComponent buildComponent) {
