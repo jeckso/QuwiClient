@@ -6,6 +6,8 @@ import com.example.quwiclient.data.local.prefs.PreferencesHelper;
 import com.example.quwiclient.data.model.api.LoginRequest;
 import com.example.quwiclient.data.model.api.LoginResponse;
 import com.example.quwiclient.data.model.api.channel.ChannelResponse;
+import com.example.quwiclient.data.model.api.logout.LogoutRequest;
+import com.example.quwiclient.data.model.api.logout.LogoutResponse;
 import com.example.quwiclient.data.model.api.user.UserResponse;
 import com.example.quwiclient.data.remote.ApiHeader;
 import com.example.quwiclient.data.remote.ApiHelper;
@@ -50,15 +52,10 @@ public class AppDataManager implements DataManager {
 //        return mApiHelper.doGoogleLoginApiCall(request);
 //    }
 //
-//    @Override
-//    public Single<LogoutResponse> doLogoutApiCall() {
-//        return mApiHelper.doLogoutApiCall();
-//    }
-//
-//    @Override
-//    public Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request) {
-//        return mApiHelper.doServerLoginApiCall(request);
-//    }
+    @Override
+    public Single<Object> doLogoutApiCall(LogoutRequest request) {
+        return mApiHelper.doLogoutApiCall(request);
+    }
 
     @Override
     public String getAccessToken() {

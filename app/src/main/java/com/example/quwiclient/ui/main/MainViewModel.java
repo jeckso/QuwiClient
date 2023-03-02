@@ -9,6 +9,7 @@ import com.example.quwiclient.R;
 import com.example.quwiclient.data.DataManager;
 import com.example.quwiclient.data.model.api.LoginRequest;
 import com.example.quwiclient.data.model.api.channel.Channel;
+import com.example.quwiclient.data.model.api.logout.LogoutRequest;
 import com.example.quwiclient.data.model.api.user.User;
 import com.example.quwiclient.ui.base.BaseViewModel;
 import com.example.quwiclient.ui.login.LoginNavigator;
@@ -80,6 +81,19 @@ public class MainViewModel extends BaseViewModel<MainNavigator> {
                     }
                 }, throwable -> {
                     getNavigator().handleError(throwable);
+                }));
+    }
+
+    public void logout() {
+        getCompositeDisposable().add(getDataManager().doLogoutApiCall(new LogoutRequest(false))
+                .doOnSuccess(response -> getDataManager().setUserAsLoggedOut())
+                .subscribeOn(getSchedulerProvider().io())
+                .observeOn(getSchedulerProvider().ui())
+                .subscribe(response -> {
+                    getNavigator().openLoginActivity();
+                }, throwable -> {
+                    getNavigator().openLoginActivity();
+
                 }));
     }
 

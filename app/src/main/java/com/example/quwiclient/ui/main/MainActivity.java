@@ -51,10 +51,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     }
 
     @Override
-    public void openMainActivity() {
-//        Intent intent = LoginActivity.newIntent(LoginActivity.this);
-//        startActivity(intent);
-//        finish();
+    public void openLoginActivity() {
+        Intent intent = LoginActivity.newIntent(MainActivity.this);
+        startActivity(intent);
+        finish();
     }
 
     @Override
@@ -94,6 +94,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_logout) {
+            mViewModel.logout();
             return true;
         } else return super.onOptionsItemSelected(item);
     }

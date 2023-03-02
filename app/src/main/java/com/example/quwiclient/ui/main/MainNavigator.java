@@ -6,5 +6,5 @@ public interface MainNavigator {
 
     void login();
 
-    void openMainActivity();
+    void openLoginActivity();
 }
