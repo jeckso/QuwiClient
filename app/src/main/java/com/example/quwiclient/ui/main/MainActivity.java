@@ -3,6 +3,9 @@ package com.example.quwiclient.ui.main;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -10,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.quwiclient.R;
 import com.example.quwiclient.data.model.api.channel.Channel;
 import com.example.quwiclient.databinding.ActivityMainBinding;
 import com.example.quwiclient.di.component.ActivityComponent;
@@ -74,11 +78,24 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_logout, menu);
+        return true;
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("MESSAGES");
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_logout) {
+            return true;
+        } else return super.onOptionsItemSelected(item);
     }
 
     @Override

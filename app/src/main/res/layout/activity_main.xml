@@ -16,30 +16,21 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             app:elevation="0dp"
-            app:expanded="false">
+            app:expanded="true">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarBase"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
-                app:contentInsetStart="0dp"
-                app:contentInsetStartWithNavigation="0dp"
                 app:subtitleTextAppearance="@font/google_sans_regular"
                 app:subtitleTextColor="@color/white"
+                app:title="@string/messages"
                 app:titleMarginEnd="0dp"
-                app:titleMarginStart="24dp"
-                app:titleTextAppearance="@font/google_sans_bold"
+                app:titleMarginStart="0dp"
+                app:titleTextAppearance="@style/TextAppearance.GoogleSansBold"
                 app:titleTextColor="@color/white" />
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/collapsingToolbarLayoutChannels"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                app:layout_scrollFlags="enterAlwaysCollapsed">
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
