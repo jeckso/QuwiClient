@@ -51,8 +51,6 @@ public class AppModule {
         return appDataManager;
     }
 
-
-
     @Provides
     @Singleton
     Gson provideGson() {

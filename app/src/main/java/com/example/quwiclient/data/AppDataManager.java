@@ -42,16 +42,6 @@ public class AppDataManager implements DataManager {
         mGson = gson;
     }
 
-//    @Override
-//    public Single<LoginResponse> doFacebookLoginApiCall(LoginRequest.FacebookLoginRequest request) {
-//        return mApiHelper.doFacebookLoginApiCall(request);
-//    }
-//
-//    @Override
-//    public Single<LoginResponse> doGoogleLoginApiCall(LoginRequest.GoogleLoginRequest request) {
-//        return mApiHelper.doGoogleLoginApiCall(request);
-//    }
-//
     @Override
     public Single<Object> doLogoutApiCall(LogoutRequest request) {
         return mApiHelper.doLogoutApiCall(request);
@@ -67,16 +57,6 @@ public class AppDataManager implements DataManager {
         mPreferencesHelper.setAccessToken(accessToken);
         mApiHelper.getApiHeader().getProtectedApiHeader().setAccessToken(accessToken);
     }
-
-//    @Override
-//    public Observable<List<Question>> getAllQuestions() {
-//        return mDbHelper.getAllQuestions();
-//    }
-//
-//    @Override
-//    public Observable<List<User>> getAllUsers() {
-//        return mDbHelper.getAllUsers();
-//    }
 
     @Override
     public Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request) {
@@ -98,10 +78,6 @@ public class AppDataManager implements DataManager {
         return mApiHelper.getUsersApiCall(userId);
     }
 
-//    @Override
-//    public Single<BlogResponse> getBlogApiCall() {
-//        return mApiHelper.getBlogApiCall();
-//    }
 
     @Override
     public String getCurrentUserEmail() {
@@ -153,90 +129,6 @@ public class AppDataManager implements DataManager {
         mPreferencesHelper.setCurrentUserProfilePicUrl(profilePicUrl);
     }
 
-//    @Override
-//    public Single<OpenSourceResponse> getOpenSourceApiCall() {
-//        return mApiHelper.getOpenSourceApiCall();
-//    }
-//
-//    @Override
-//    public Observable<List<Option>> getOptionsForQuestionId(Long questionId) {
-//        return mDbHelper.getOptionsForQuestionId(questionId);
-//    }
-//
-//    @Override
-//    public Observable<List<QuestionCardData>> getQuestionCardData() {
-//        return mDbHelper.getAllQuestions()
-//                .flatMap(questions -> Observable.fromIterable(questions))
-//                .flatMap(question -> Observable.zip(
-//                        mDbHelper.getOptionsForQuestionId(question.id),
-//                        Observable.just(question),
-//                        (options, question1) -> new QuestionCardData(question1, options)))
-//                .toList()
-//                .toObservable();
-//    }
-//
-//    @Override
-//    public Observable<Boolean> insertUser(User user) {
-//        return mDbHelper.insertUser(user);
-//    }
-//
-//    @Override
-//    public Observable<Boolean> isOptionEmpty() {
-//        return mDbHelper.isOptionEmpty();
-//    }
-//
-//    @Override
-//    public Observable<Boolean> isQuestionEmpty() {
-//        return mDbHelper.isQuestionEmpty();
-//    }
-//
-//    @Override
-//    public Observable<Boolean> saveOption(Option option) {
-//        return mDbHelper.saveOption(option);
-//    }
-//
-//    @Override
-//    public Observable<Boolean> saveOptionList(List<Option> optionList) {
-//        return mDbHelper.saveOptionList(optionList);
-//    }
-//
-//    @Override
-//    public Observable<Boolean> saveQuestion(Question question) {
-//        return mDbHelper.saveQuestion(question);
-//    }
-//
-//    @Override
-//    public Observable<Boolean> saveQuestionList(List<Question> questionList) {
-//        return mDbHelper.saveQuestionList(questionList);
-//    }
-//
-//    @Override
-//    public Observable<Boolean> seedDatabaseOptions() {
-//        return mDbHelper.isOptionEmpty()
-//                .concatMap(isEmpty -> {
-//                    if (isEmpty) {
-//                        Type type = new TypeToken<List<Option>>() {
-//                        }.getType();
-//                        List<Option> optionList = mGson.fromJson(CommonUtils.loadJSONFromAsset(mContext, AppConstants.SEED_DATABASE_OPTIONS), type);
-//                        return saveOptionList(optionList);
-//                    }
-//                    return Observable.just(false);
-//                });
-//    }
-//
-//    @Override
-//    public Observable<Boolean> seedDatabaseQuestions() {
-//        return mDbHelper.isQuestionEmpty()
-//                .concatMap(isEmpty -> {
-//                    if (isEmpty) {
-//                        Type type = $Gson$Types.newParameterizedTypeWithOwner(null, List.class, Question.class);
-//                        List<Question> questionList = mGson
-//                                .fromJson(CommonUtils.loadJSONFromAsset(mContext, AppConstants.SEED_DATABASE_QUESTIONS), type);
-//                        return saveQuestionList(questionList);
-//                    }
-//                    return Observable.just(false);
-//                });
-//    }
 
     @Override
     public void setUserAsLoggedOut() {

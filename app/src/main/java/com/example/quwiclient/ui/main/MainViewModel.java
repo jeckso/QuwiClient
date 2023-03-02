@@ -1,19 +1,13 @@
 package com.example.quwiclient.ui.main;
 
-import android.text.TextUtils;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.quwiclient.R;
 import com.example.quwiclient.data.DataManager;
-import com.example.quwiclient.data.model.api.LoginRequest;
 import com.example.quwiclient.data.model.api.channel.Channel;
 import com.example.quwiclient.data.model.api.logout.LogoutRequest;
 import com.example.quwiclient.data.model.api.user.User;
 import com.example.quwiclient.ui.base.BaseViewModel;
-import com.example.quwiclient.ui.login.LoginNavigator;
-import com.example.quwiclient.utils.CommonUtils;
 import com.example.quwiclient.utils.rx.SchedulerProvider;
 
 import java.util.List;

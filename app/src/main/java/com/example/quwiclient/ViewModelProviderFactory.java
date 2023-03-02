@@ -13,7 +13,7 @@ public class ViewModelProviderFactory<T extends ViewModel> extends ViewModelProv
     private final Class<T> viewModelClass;
     private final Supplier<T> viewModelSupplier;
 
-    public ViewModelProviderFactory(Class<T> viewModelClass, Supplier<T> viewModelSupplier){
+    public ViewModelProviderFactory(Class<T> viewModelClass, Supplier<T> viewModelSupplier) {
         this.viewModelClass = viewModelClass;
         this.viewModelSupplier = viewModelSupplier;
     }
@@ -22,10 +22,10 @@ public class ViewModelProviderFactory<T extends ViewModel> extends ViewModelProv
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
 
-        if(modelClass.isAssignableFrom(viewModelClass)){
+        if (modelClass.isAssignableFrom(viewModelClass)) {
             return (T) viewModelSupplier.get();
-        }else {
-            throw new IllegalArgumentException("Unknown Class name "+viewModelClass.getName());
+        } else {
+            throw new IllegalArgumentException("Unknown Class name " + viewModelClass.getName());
         }
     }
 }

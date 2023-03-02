@@ -8,9 +8,5 @@ import dagger.Component;
 @FragmentScope
 @Component(modules = FragmentModule.class, dependencies = AppComponent.class)
 public interface FragmentComponent {
-//    void inject(BlogFragment fragment);
-//
-//    void inject(OpenSourceFragment fragment);
-//
-//    void inject(AboutFragment fragment);
+
 }

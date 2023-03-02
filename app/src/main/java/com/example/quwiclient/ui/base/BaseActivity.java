@@ -16,16 +16,13 @@ import com.example.quwiclient.App;
 import com.example.quwiclient.di.component.ActivityComponent;
 import com.example.quwiclient.di.component.DaggerActivityComponent;
 import com.example.quwiclient.di.module.ActivityModule;
+import com.example.quwiclient.ui.login.LoginActivity;
 
 import javax.inject.Inject;
 
 
 public abstract class BaseActivity<T extends ViewBinding, V extends BaseViewModel> extends AppCompatActivity
         implements BaseFragment.Callback {
-
-    // TODO
-    // this can probably depend on isLoading variable of BaseViewModel,
-    // since its going to be common for all the activities
 
     private T mViewBinding;
 
@@ -68,8 +65,8 @@ public abstract class BaseActivity<T extends ViewBinding, V extends BaseViewMode
 
 
     public void openActivityOnTokenExpire() {
-       // startActivity(LoginActivity.newIntent(this));
-       // finish();
+        startActivity(LoginActivity.newIntent(this));
+        finish();
     }
 
     private ActivityComponent getBuildComponent() {

@@ -26,7 +26,6 @@ import java.util.Random;
 public final class BindingUtils {
 
     private BindingUtils() {
-        // This class is not publicly instantiable
     }
 
     public static void setImageUrl(ImageView imageView, String url, String name) {

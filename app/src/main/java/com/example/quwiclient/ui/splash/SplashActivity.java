@@ -34,7 +34,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashVi
         super.onCreate(savedInstanceState);
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
-        setContentView(view);;
+        setContentView(view);
+        ;
         mViewModel.setNavigator(this);
         mViewModel.decideNextActivity();
     }

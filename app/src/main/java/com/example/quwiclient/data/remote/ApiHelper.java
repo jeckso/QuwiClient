@@ -14,22 +14,14 @@ import io.reactivex.Single;
 
 public interface ApiHelper {
 
-
-
-//    Single<LogoutResponse> doLogoutApiCall();
-//
     Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request);
 
     ApiHeader getApiHeader();
 
-   Single<ChannelResponse> getChannelsApiCall();
-   Single<UserResponse> getUsersApiCall(List<String> users);
+    Single<ChannelResponse> getChannelsApiCall();
 
-   Single<Object> doLogoutApiCall(LogoutRequest request);
+    Single<UserResponse> getUsersApiCall(List<String> users);
 
+    Single<Object> doLogoutApiCall(LogoutRequest request);
 
-
-
-
-//    Single<OpenSourceResponse> getOpenSourceApiCall();
 }

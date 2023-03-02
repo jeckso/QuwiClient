@@ -3,20 +3,15 @@ package com.example.quwiclient.ui.main.channel.adapter;
 import static com.example.quwiclient.utils.BindingUtils.setImageUrl;
 import static com.example.quwiclient.utils.BindingUtils.transformDateForChat;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quwiclient.R;
-import com.example.quwiclient.data.local.prefs.AppPreferencesHelper;
 import com.example.quwiclient.data.model.api.channel.Channel;
-import com.example.quwiclient.data.model.api.channel.ChannelResponse;
 import com.example.quwiclient.databinding.ItemChatChannelBinding;
 import com.example.quwiclient.ui.base.BaseViewHolder;
-import com.example.quwiclient.utils.AppLogger;
 
 import java.util.List;
 

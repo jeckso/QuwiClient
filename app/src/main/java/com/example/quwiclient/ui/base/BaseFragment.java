@@ -91,10 +91,6 @@ public abstract class BaseFragment<T extends ViewBinding, V extends BaseViewMode
         }
     }
 
-//    public boolean isNetworkConnected() {
-//        return mActivity != null && mActivity.isNetworkConnected();
-//    }
-
     public void openActivityOnTokenExpire() {
         if (mActivity != null) {
             mActivity.openActivityOnTokenExpire();

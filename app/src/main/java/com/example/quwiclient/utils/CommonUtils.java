@@ -13,7 +13,6 @@ import java.util.Locale;
 public final class CommonUtils {
 
     private CommonUtils() {
-        // This utility class is not publicly instantiable
     }
 
     public static String getTimestamp() {
