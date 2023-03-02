@@ -6,9 +6,12 @@ import com.example.quwiclient.data.local.prefs.PreferencesHelper;
 import com.example.quwiclient.data.model.api.LoginRequest;
 import com.example.quwiclient.data.model.api.LoginResponse;
 import com.example.quwiclient.data.model.api.channel.ChannelResponse;
+import com.example.quwiclient.data.model.api.user.UserResponse;
 import com.example.quwiclient.data.remote.ApiHeader;
 import com.example.quwiclient.data.remote.ApiHelper;
 import com.google.gson.Gson;
+
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -91,6 +94,11 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<ChannelResponse> getChannelsApiCall() {
         return mApiHelper.getChannelsApiCall();
+    }
+
+    @Override
+    public Single<UserResponse> getUsersApiCall(List<String> userId) {
+        return mApiHelper.getUsersApiCall(userId);
     }
 
 //    @Override

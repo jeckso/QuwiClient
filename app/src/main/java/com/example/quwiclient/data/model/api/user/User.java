@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 public class User {
 
     @SerializedName("avatar_url")
-    private Object mAvatarUrl;
+    private String mAvatarUrl;
     @SerializedName("dta_activity")
     private String mDtaActivity;
     @SerializedName("dta_create")
@@ -27,11 +27,11 @@ public class User {
     @SerializedName("timezone_offset")
     private Long mTimezoneOffset;
 
-    public Object getAvatarUrl() {
+    public String getAvatarUrl() {
         return mAvatarUrl;
     }
 
-    public void setAvatarUrl(Object avatarUrl) {
+    public void setAvatarUrl(String avatarUrl) {
         mAvatarUrl = avatarUrl;
     }
 

@@ -65,7 +65,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
         final Observer<List<Channel>> channelObserver = new Observer<List<Channel>>() {
             @Override
             public void onChanged(@Nullable final List<Channel> channels) {
-
                 mChannelAdapter.addItems(channels);
                 setUp();
             }

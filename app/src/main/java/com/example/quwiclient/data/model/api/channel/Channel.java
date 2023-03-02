@@ -2,6 +2,7 @@
 package com.example.quwiclient.data.model.api.channel;
 
 import java.util.List;
+
 import com.google.gson.annotations.SerializedName;
 
 @SuppressWarnings("unused")
@@ -41,14 +42,25 @@ public class Channel {
     private Boolean mIsStarred;
     @SerializedName("is_unread_manual")
     private Boolean mIsUnreadManual;
-    @SerializedName("message_last")
-    private Object mMessageLast;
+
+    private User mUser;
     @SerializedName("mute_until_period")
     private Long mMuteUntilPeriod;
     @SerializedName("pin_to_top")
     private Boolean mPinToTop;
     @SerializedName("type")
     private String mType;
+
+    @SerializedName("message_last")
+    private MessageLast mMessageLast;
+
+    public MessageLast getMessageLast() {
+        return mMessageLast;
+    }
+
+    public void setMessageLast(MessageLast messageLast) {
+        mMessageLast = messageLast;
+    }
 
     public Object getCustomInfo() {
         return mCustomInfo;
@@ -186,12 +198,13 @@ public class Channel {
         mIsUnreadManual = isUnreadManual;
     }
 
-    public Object getMessageLast() {
-        return mMessageLast;
+
+    public User getUser() {
+        return mUser;
     }
 
-    public void setMessageLast(Object messageLast) {
-        mMessageLast = messageLast;
+    public void setUser(User user) {
+        mUser = user;
     }
 
     public Long getMuteUntilPeriod() {

@@ -1,5 +1,8 @@
 package com.example.quwiclient.ui.main.channel.adapter;
 
+import static com.example.quwiclient.utils.BindingUtils.setImageUrl;
+import static com.example.quwiclient.utils.BindingUtils.transformDateForChat;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -7,6 +10,8 @@ import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quwiclient.R;
+import com.example.quwiclient.data.local.prefs.AppPreferencesHelper;
 import com.example.quwiclient.data.model.api.channel.Channel;
 import com.example.quwiclient.data.model.api.channel.ChannelResponse;
 import com.example.quwiclient.databinding.ItemChatChannelBinding;
@@ -68,9 +73,19 @@ public class ChannelAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         @Override
         public void onBind(int position) {
             final Channel blog = mBlogResponseList.get(position);
+            if (blog.getUser() != null) {
+                setImageUrl(mBinding.rivChannelsImage, blog.getUser().getAvatarUrl(), blog.getUser().getName());
+            }
+            mBinding.tvLastMessageDate.setText(transformDateForChat(blog.getDtaLastRead()));
+            if (blog.getUser().getName() != null) {
+                mBinding.tvChannelName.setText(blog.getUser().getName());
+            } else {
+                mBinding.tvChannelName.setText(R.string.saved_messages);
 
-            mBinding.tvChannelName.setText(blog.getId().toString());
-
+            }
+            if (blog.getMessageLast() != null) {
+                mBinding.tvLastMessage.setText(blog.getMessageLast().getSnippet());
+            }
         }
 
     }

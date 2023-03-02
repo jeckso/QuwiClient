@@ -36,8 +36,10 @@ public class ApiHeader {
 
 
         public ProtectedApiHeader(String mApiKey, Long mUserId, String mAccessToken) {
+            if (mAccessToken != null) {
+                this.mAccessToken = ("Bearer ".concat(mAccessToken));
 
-            this.mAccessToken = ("Bearer ".concat(mAccessToken));
+            } else this.mAccessToken = mAccessToken;
         }
 
         public String getAccessToken() {

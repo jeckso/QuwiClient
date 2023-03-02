@@ -9,4 +9,5 @@
     <string name="swipe_down_for_archive">Swipe down for archive</string>
     <string name="error_cannot_reach_quwi_servers_try_again">Can\\\'t reach Quwi servers. Please make sure that you are connected to the Internet and try again.</string>
     <string name="try_again">Try again</string>
+    <string name="saved_messages">Saved Messages</string>
 </resources>
